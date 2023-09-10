@@ -2,18 +2,18 @@ extends layout
 
 block content
 
-    a(href="/") Go Back
+    .header
+        .top
+            a(href="/") Go Back
+            h2 Add a new message to the board
 
-    h1 Add a new message
-
-    form(action="/new" , method="POST")
-
-        div
-            label(for="name") Please type a name : 
-            input(type="text", id="name" name="authorName")
-        
-        div
-            label(for="message") Add a message : 
-            input(type="text", id="message" name="message")
-        
-        button(type="submit") Submit
+        form(action="/new" , method="POST")
+            div.input-wrapper
+                label(for="name") Please type a name : 
+                input(type="text", id="name" name="authorName")
+            
+            div.input-wrapper
+                label(for="message") Type a message : 
+                textarea(name="message", cols="30", rows="10")
+            
+            button(type="submit") Submit
