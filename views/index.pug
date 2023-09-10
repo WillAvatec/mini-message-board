@@ -24,15 +24,9 @@ block content
                       .date
                         span #{message.added.toLocaleString('en-GB',{dateStyle:"short", timeStyle:"short"})}
 
-
-            
-
-    a(href="/new") Add a new Message
-
     footer
       span.smiley
         svg(width="24px", height="24px")
           use (xlink:href="../images/smiley.svg#smiley")
-      .cross 
-      input(type="text", id="messageBox")
-      .voice
+      .cross
+      a(href="/new") Add a new Message
