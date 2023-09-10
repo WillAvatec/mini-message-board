@@ -1,7 +1,7 @@
 extends layout
 
 block content
-
+  div.screen-wrapper
     ul 
       each message in messages 
         li
@@ -23,16 +23,7 @@ block content
 
                       .date
                         span #{message.added.toLocaleString('en-GB',{dateStyle:"short", timeStyle:"short"})}
-
-
-            
-
+  footer
+    img.smiley(src="/images/smiley.png")
+    img.plus(src="/images/plus.png")
     a(href="/new") Add a new Message
-
-    footer
-      span.smiley
-        svg(width="24px", height="24px")
-          use (xlink:href="../images/smiley.svg#smiley")
-      .cross 
-      input(type="text", id="messageBox")
-      .voice
