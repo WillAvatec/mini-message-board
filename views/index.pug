@@ -1,15 +1,38 @@
 extends layout
 
 block content
-  h1= title
 
-  ul 
-    each message in messages 
-      li 
-        div 
-          h2 #{message.user  + " says:"}
-          h3
-            strong #{message.text}
-          p #{message.added}
+    ul 
+      each message in messages 
+        li
+          .row
+            .row-wrapper
+              span
+              .message
+                .message--content 
+                  div
+                    .content--padding
+                      .top-content
+                        span.author--name #{message.user}
+                      .main-content
+                        span.content--text--wrapper
+                          .content-text #{message.text}
+                        span
+                          span.next-line
 
-  a(href="/new") Add a new Message
+
+                      .date
+                        span #{message.added.toLocaleString('en-GB',{dateStyle:"short", timeStyle:"short"})}
+
+
+            
+
+    a(href="/new") Add a new Message
+
+    footer
+      span.smiley
+        svg(width="24px", height="24px")
+          use (xlink:href="../images/smiley.svg#smiley")
+      .cross 
+      input(type="text", id="messageBox")
+      .voice
