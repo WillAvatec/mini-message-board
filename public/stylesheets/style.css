@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+
 :root {
   --mainbg-color: #efeae2;
   --body-bg: white;
@@ -10,35 +12,96 @@
 body {
   padding: 2.5rem;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: white;
-  background-color: var(--mainbg-color);
-  background-image: url(/images/whatsappBg.png);
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
-header {
+.header {
   padding: 10px 16px;
   background-color: var(--header-bg);
   font-weight: 400;
 }
 
-footer {
-  background-color: var(--footer-bg);
+.top {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
 }
 
-svg {
-  color: var(--icon);
+.input-wrapper {
+  display: grid;
+  margin-bottom: 1rem;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+  padding: 5px 8px;
+}
+
+h1 {
+  color: rgb(0, 173, 0);
+  font-size: 3rem;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.75);
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+}
+
+input {
+  max-width: 50%;
+  width: 20rem;
+}
+
+.smiley,
+.plus {
+  width: 30px;
+  height: 30px;
 }
 
 ul li {
   list-style-type: none;
 }
 
+a {
+  color: #f0f0f0;
+  text-decoration: none;
+  border-radius: 7.5px;
+  padding: 8px 10px;
+  background-color: green;
+}
+
+a:hover {
+  background-color: rgb(0, 85, 0);
+  color: white;
+}
+
+.screen-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  overflow-y: scroll;
+  background: var(--mainbg-color) url(/images/whatsappBg.png);
+}
+
 .wrapper {
   width: 70vw;
   min-width: 300px;
   margin: 0 auto;
-  border: 5px solid #111b21;
   border-radius: 8px;
+  outline: 8px double green;
+}
+
+footer {
+  background-color: var(--footer-bg);
+  padding: 1rem 1.1rem;
+  gap: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: auto;
 }
 
 /* Message Box Styles */
@@ -134,8 +197,4 @@ ul li {
   margin-bottom: -5px;
   color: #8d8b8b;
   font-size: 12px;
-}
-
-a {
-  color: #00b7ff;
 }
