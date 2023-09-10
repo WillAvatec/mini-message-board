@@ -17,12 +17,12 @@ const messages = [
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express", messages });
+  res.render("index", { messages });
 });
 
 // Get on new
 router.get("/new", function (req, res, next) {
-  res.render("form", { title: "New" });
+  res.render("form");
 });
 
 router.post("/new", function (req, res, next) {
