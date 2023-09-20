@@ -8,6 +8,9 @@ const indexRouter = require("./routes/index");
 
 const app = express();
 
+// Load .env file contents to process.env
+require("dotenv").config();
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
