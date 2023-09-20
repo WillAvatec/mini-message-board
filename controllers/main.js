@@ -14,7 +14,11 @@ exports.form_get = asyncHandler(async (req, res, next) => {
 
 // Handle form body data on POST
 exports.form_post = asyncHandler(async (req, res, next) => {
-  const { author, content } = req.body;
+  let { author, content } = req.body;
+
+  if (author.trim() === "") {
+    author = "Anonymous";
+  }
 
   const newMessage = new Message({
     author,
