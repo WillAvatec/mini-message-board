@@ -1,3 +1,4 @@
+const controller = require("../controllers/main");
 const express = require("express");
 const router = express.Router();
 
@@ -5,7 +6,7 @@ const router = express.Router();
 const messages = [
   {
     text: "Hi there!",
-    user: "Amando",
+    author: "Amando",
     added: new Date(),
   },
   {
@@ -16,25 +17,12 @@ const messages = [
 ];
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { messages });
-});
+router.get("/", controller.index);
 
-// Get on new
-router.get("/new", function (req, res, next) {
-  res.render("form");
-});
+/* GET form */
+router.get("/new", controller.form_get);
 
-router.post("/new", function (req, res, next) {
-  const { message, authorName } = req.body;
-
-  messages.push({
-    text: message,
-    user: authorName,
-    added: new Date(),
-  });
-
-  res.redirect("/");
-});
+/* POST new message */
+router.post("/new", controller.form_post);
 
 module.exports = router;
