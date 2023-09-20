@@ -8,12 +8,12 @@ block content
             h2 Add a new message to the board
 
         form(action="/new" , method="POST")
-            div.input-wrapper
+            .input-wrapper
                 label(for="name") Please type a name : 
-                input(type="text", id="name" name="authorName")
-            
-            div.input-wrapper
+                input(type="text" id="name" name="author")
+
+            .input-wrapper
                 label(for="message") Type a message : 
-                textarea(name="message", cols="30", rows="10")
-            
+                textarea(name="content" cols="30" rows="10")
+
             button(type="submit") Submit

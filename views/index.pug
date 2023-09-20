@@ -1,29 +1,29 @@
 extends layout
 
 block content
-  div.screen-wrapper
-    ul 
-      each message in messages 
-        li
-          .row
-            .row-wrapper
-              span
-              .message
-                .message--content 
-                  div
-                    .content--padding
-                      .top-content
-                        span.author--name #{message.user}
-                      .main-content
-                        span.content--text--wrapper
-                          .content-text #{message.text}
-                        span
-                          span.next-line
+    .screen-wrapper
+        ul 
+            each message in messages 
+                li
+                    .row
+                        .row-wrapper
+                            span
+                            .message
+                                .message--content 
+                                    div
+                                        .content--padding
+                                            .top-content
+                                                span.author--name #{message.author}
+                                            .main-content
+                                                span.content--text--wrapper
+                                                    .content-text #{message.content}
+                                                span
+                                                    span.next-line
 
 
-                      .date
-                        span #{message.added.toLocaleString('en-GB',{dateStyle:"short", timeStyle:"short"})}
-  footer
-    img.smiley(src="/images/smiley.png")
-    img.plus(src="/images/plus.png")
-    a(href="/new") Add a new Message
+                                            .date
+                                                span #{message.date.toLocaleString('en-GB',{dateStyle:"short", timeStyle:"short"})}
+    footer
+        img.smiley(src="/images/smiley.png")
+        img.plus(src="/images/plus.png")
+        a(href="/new") Add a new Message
