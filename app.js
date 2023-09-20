@@ -22,6 +22,7 @@ const mongoDB = process.env.MONGODB_URI;
 main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
+  console.log("Succesful connection to database!");
 }
 
 // view engine setup
