@@ -179,8 +179,9 @@ footer {
   min-width: 8ch;
   flex: 1;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: break-spaces;
   overflow: hidden;
+  overflow-wrap: anywhere;
 }
 
 .author--name ::before {
