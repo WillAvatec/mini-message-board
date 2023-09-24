@@ -8,6 +8,23 @@ const indexRouter = require("./routes/index");
 
 const app = express();
 
+// Load .env file contents to process.env
+require("dotenv").config();
+
+// Import mongoose
+const mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
+
+// Define mongodb URI for connection
+const mongoDB = process.env.MONGODB_URI;
+
+// Wait for database to connect, log error otherwise
+main().catch((err) => console.log(err));
+async function main() {
+  await mongoose.connect(mongoDB);
+  console.log("Succesful connection to database!");
+}
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");

@@ -10,7 +10,6 @@
 }
 
 body {
-  padding: 2.5rem;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: rgba(0, 0, 0, 0.85);
 }
@@ -111,8 +110,26 @@ footer {
   flex-direction: column;
   align-items: flex-start;
   padding-right: 57px;
-  padding-left: 71px;
+  padding-left: 40px;
   margin-bottom: 12px;
+}
+
+@media screen and (max-width: 480px) {
+  ul {
+    padding: 0;
+  }
+  .row-wrapper {
+    padding-left: 15px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  ul {
+    padding: 0;
+  }
+  .row-wrapper {
+    padding-left: 25px;
+  }
 }
 
 .message {
@@ -162,8 +179,9 @@ footer {
   min-width: 8ch;
   flex: 1;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: break-spaces;
   overflow: hidden;
+  overflow-wrap: anywhere;
 }
 
 .author--name ::before {
